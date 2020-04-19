@@ -14,7 +14,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
-			<img src="https://covid19update.github.io/world/country/preview-3.png" id="preview-img" />
+<img src="https://covid19update.github.io/world/country/preview-3.png" id="preview-img" />
 		<!-- JS Charting script -->
 
 		<script src="https://code.jscharting.com/2.9.0/jscharting.js"></script>
@@ -24,29 +24,6 @@
 		<script type="text/javascript">
 			function updateURL(val) {
 				window.location.href = "/world/country/?in=" + val;
-			}
-			
-			function select(elem) {
-				var val = elem.options[elem.selectedIndex].value;
-				updateURL(val);
-			}
-			
-			function input(elem) {
-				if (event.keyCode === 13){
-					var val = elem.value;
-					updateURL(val);
-				}
-			}
-		</script>
-<!-- JS Charting script -->
-
-<script src="https://code.jscharting.com/2.9.0/jscharting.js"></script>
-
-<!-- Drop-down list input of available regions -->
-
-		<script type="text/javascript">
-			function updateURL(val) {
-				window.location.href = "/index.html?in=" + val;
 			}
 			
 			function select(elem) {
@@ -326,7 +303,7 @@
 <!-- Get info on location/region -->
 
 
-<center>
+<center><div>
 <p id="data">
 	<span id="title">COVID-19 Tracker</span><br />
 
@@ -335,5 +312,5 @@
 	
 	<span id="confirmed-title">Cases:</span><br /><span id="confirmed">(n/a)</span><br />
 	<span id="deaths-title">Deaths:</span><br /><span id="deaths">(n/a)</span><br />
-								     </p></center>
+	</p></div></center>
 </body></html>
