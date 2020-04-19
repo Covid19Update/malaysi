@@ -23,7 +23,7 @@
 
 		<script type="text/javascript">
 			function updateURL(val) {
-				window.location.href = "/world/country/?in=" + val;
+				window.location.href = "/world/country?in=" + val;
 			}
 			
 			function select(elem) {
@@ -48,7 +48,7 @@
 		
 <!-- Search by region (country or U.S. state) -->
 
-<center><div id="selection-container">
+<div id="selection-container">
 	<select id="selection" onchange="updateURL(document.getElementById('selection'));">
 		<option selected disabled>Select region (country or US state)</option>
 		<option value="Worldwide">Worldwide</option>
@@ -299,11 +299,11 @@
 		<option value="Zimbabwe">Zimbabwe</option>
 	</select>
 </div>
-	</center>
+
 <!-- Get info on location/region -->
 
 
-<center><div>
+<center>
 <p id="data">
 	<span id="title">COVID-19 Tracker</span><br />
 
@@ -312,5 +312,5 @@
 	
 	<span id="confirmed-title">Cases:</span><br /><span id="confirmed">(n/a)</span><br />
 	<span id="deaths-title">Deaths:</span><br /><span id="deaths">(n/a)</span><br />
-	</p></div></center>
+	</p></center>
 </body></html>
