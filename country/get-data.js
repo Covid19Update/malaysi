@@ -27,7 +27,7 @@ function fill_data(date, cases, deaths, recovered) {
 	document.getElementById("date").textContent = date.toUpperCase();
 	document.getElementById("confirmed").textContent = cases.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	document.getElementById("deaths").textContent = deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-	document.getElementById("recovered").textContent = deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	document.getElementById("recovered").textContent = recovered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 	  
 // Wait for document load
