@@ -64,7 +64,7 @@ function fill_data(date, cases, deaths, recovered) {
 	document.getElementById("date").textContent = date.toUpperCase();
 	document.getElementById("confirmed").textContent = cases.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	document.getElementById("deaths").textContent = deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        document.getElementById("recovered").textContent = deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        document.getElementById("recovered").textContent = recovered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 	  
 // Wait for document load
@@ -233,7 +233,7 @@ function fill_data(date, cases, deaths, recovered) {
 	document.getElementById("date").textContent = date.toUpperCase();
 	document.getElementById("confirmed").textContent = cases.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	document.getElementById("deaths").textContent = deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-	document.getElementById("recovered").textContent = deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	document.getElementById("recovered").textContent = recovered.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 	  
 // Wait for document load
@@ -395,6 +395,7 @@ $(document).ready(function(){
 			var total_date;
 			var total_confirmed = 0;
 			var total_deaths = 0;
+			var total_recovered =0;
 			for (n = 0; n < Object.keys(data).length; n++) {
 				var subtotal_confirmed = 0;
 				var subtotal_deaths = 0;
@@ -435,7 +436,8 @@ $(document).ready(function(){
 					fill_data(
 						new Date(date).toLocaleDateString("en-US", date_options), 
 						confirmed,
-						deaths
+						deaths,
+						recovered
 					);
 					
 				})
