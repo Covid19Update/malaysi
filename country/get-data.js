@@ -23,10 +23,11 @@ if (typeof(loc) === "undefined") {
 }
 
 // Put the data onto the page
-function fill_data(date, cases, deaths) {
+function fill_data(date, cases, deaths, recovered) {
 	document.getElementById("date").textContent = date.toUpperCase();
 	document.getElementById("confirmed").textContent = cases.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	document.getElementById("deaths").textContent = deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	document.getElementById("recovered").textContent = deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 	  
 // Wait for document load
@@ -59,10 +60,11 @@ if (typeof(loc) === "undefined") {
 }
 
 // Put the data onto the page
-function fill_data(date, cases, deaths) {
+function fill_data(date, cases, deaths, recovered) {
 	document.getElementById("date").textContent = date.toUpperCase();
 	document.getElementById("confirmed").textContent = cases.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	document.getElementById("deaths").textContent = deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        document.getElementById("recovered").textContent = deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 	  
 // Wait for document load
@@ -100,18 +102,21 @@ $(document).ready(function(){
 						total_date = date;
 						subtotal_confirmed = confirmed;
 						subtotal_deaths = deaths;
+					        subtotal_recovered = recovered;
 					}
 				)
 				// Count up cases and deaths
 				total_confirmed += subtotal_confirmed;
 				total_deaths += subtotal_deaths;
+				total_recovered += subtotal_recovered;
 			}
 			
 			//Data
 			fill_data(
 				new Date(total_date).toLocaleDateString("en-US", date_options), 
 				total_confirmed,
-				total_deaths
+				total_deaths,
+				total_recovered
 			);
 
 		// Handle a country region
@@ -129,7 +134,8 @@ $(document).ready(function(){
 					fill_data(
 						new Date(date).toLocaleDateString("en-US", date_options), 
 						confirmed,
-						deaths
+						deaths,
+						recovered
 					);
 					
 				})
@@ -180,7 +186,8 @@ $(document).ready(function(){
 								fill_data(
 									new Date(date).toLocaleDateString("en-US", date_options), 
 									cases,
-									deaths
+									deaths,
+									recovered
 								);
 							}
 						
@@ -225,6 +232,7 @@ function fill_data(date, cases, deaths) {
 	document.getElementById("date").textContent = date.toUpperCase();
 	document.getElementById("confirmed").textContent = cases.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	document.getElementById("deaths").textContent = deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	document.getElementById("recovered").textContent = deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 	  
 // Wait for document load
@@ -254,26 +262,31 @@ $(document).ready(function(){
 			var total_date;
 			var total_confirmed = 0;
 			var total_deaths = 0;
+			var total_recovered = 0;
 			for (n = 0; n < Object.keys(data).length; n++) {
 				var subtotal_confirmed = 0;
 				var subtotal_deaths = 0;
+				var subtotal_recovered = 0;
 				Object.values(data)[n].forEach(({ date, confirmed, recovered, deaths }) =>
 					{
 						total_date = date;
 						subtotal_confirmed = confirmed;
 						subtotal_deaths = deaths;
+					        subtotal_recovered = recovered;
 					}
 				)
 				// Count up cases and deaths
 				total_confirmed += subtotal_confirmed;
 				total_deaths += subtotal_deaths;
+				total_recovered += subtotal_recovered;
 			}
 			
 			//Data
 			fill_data(
 				new Date(total_date).toLocaleDateString("en-US", date_options), 
 				total_confirmed,
-				total_deaths
+				total_deaths,
+				total_recovered
 			);
 
 		// Handle a country region
@@ -291,7 +304,8 @@ $(document).ready(function(){
 					fill_data(
 						new Date(date).toLocaleDateString("en-US", date_options), 
 						confirmed,
-						deaths
+						deaths,
+						recovered
 					);
 					
 				})
@@ -388,11 +402,13 @@ $(document).ready(function(){
 						total_date = date;
 						subtotal_confirmed = confirmed;
 						subtotal_deaths = deaths;
+					        subtotal_recovered = recovered;
 					}
 				)
 				// Count up cases and deaths
 				total_confirmed += subtotal_confirmed;
 				total_deaths += subtotal_deaths;
+				total_recovered += subtotal_recovered;
 			}
 			
 			//Data
