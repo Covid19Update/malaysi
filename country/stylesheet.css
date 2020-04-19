@@ -1,0 +1,262 @@
+body, html {
+    height: 100%;
+	margin: 0;
+}
+
+html {
+	background-color: #000026;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body {
+	overflow-y: auto scroll;
+	overflow-x: hidden;
+}
+
+@font-face {
+	font-family: "Open 24 Display";
+	src: url("/fonts/Open 24 Display.ttf");
+}
+
+#input-container {
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	top: 5%;
+}
+
+#input {
+	width: 320px;
+	color: white;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+	border-radius: 3px;
+	padding: 0.2%;
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1);
+    background: rgba(35,178,255,1);
+}
+
+#input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+#input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+
+#input::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+}
+
+#selection-div {
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	top: 12%;
+	color: white;
+}
+
+#selection {
+	color: white;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+	border-radius: 3px;
+	padding: 0.2%;
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1);
+    background: rgba(35,178,255,1);
+}
+
+.selection-category {
+	font-weight: bold;
+	font-size: 18px;
+	color: white;
+}
+
+.selection-option {
+	font-family: Calibri, sans serif;
+	font-size: 16px;
+	color: white;
+}
+
+.selection-space {
+	font-size: 8px;
+	color: white;
+}
+
+#data-container {
+	text-align: center;
+	width: 100%;
+	margin-left: -204px;
+}
+
+#data {
+	display: inline-block;
+	position: absolute;
+	top: 20%;
+	width: 400px;
+	height: 600px;
+	text-align: center;
+	font-family: Tahoma;
+	font-size: 26px;
+	color: white;
+}
+
+#title {
+	position: relative;
+	float: left;
+	width: 100%;
+	text-align: center;
+	font-family: Calibri,sans serif;
+	font-size: 42px;
+	letter-spacing: 0.15em;
+}
+
+#region-date-container {
+	position: relative;
+	float: left;
+	width: 60%;
+	margin-left: 17%;
+	margin-top: 8%;
+	border-top: 3px solid white;
+	border-bottom: 3px solid white;
+	border-radius: 25px;
+	padding: 3%;
+}
+
+#region {
+	font-size: 20px;
+	letter-spacing: 0.1em;
+}
+
+#date {
+	font-size: 18px;
+	color: #d9f2ff;
+}
+
+#confirmed-container {
+	position: relative;
+	float: left;
+	width: 60%;
+	margin-left: 17%;
+	margin-top: 5%;
+	border-top: 3px solid white;
+	border-bottom: 3px solid white;
+	border-radius: 25px;
+	padding: 3%;
+}
+
+#confirmed-title {
+	font-size: 18px;
+	letter-spacing: 0.2em;
+}
+
+#confirmed {
+	font-family: "Open 24 Display", Calibri, sans serif;
+	color: #ffeaab;
+	font-size: 52px;
+}
+
+#deaths-container {
+	position: relative;
+	float: left;
+	width: 60%;
+	margin-left: 17%;
+	margin-top: 5%;
+	border-top: 3px solid white;
+	border-bottom: 3px solid white;
+	border-radius: 25px;
+	padding: 3%;
+}
+
+#deaths-title {
+	font-size: 18px;
+	letter-spacing: 0.2em;
+}
+
+#deaths {
+	font-family: "Open 24 Display", Calibri, sans serif;
+	color: #ffb3da;
+	font-size: 52px;
+}
+
+#logo-container {
+	position: relative;
+	float: left;
+	margin-top: 8%;
+	width: 100%;
+	height: 100px;
+	text-align: center;
+}
+
+.logo {
+	position: absolute;
+	margin-left: -40px;
+	width: 78px;
+	transition: all 0.3s ease-in;
+	-webkit-transition: all 0.3s ease-in;
+}
+
+.dormant {
+	z-index: 2;
+}
+
+.active {
+	z-index: 1;
+	transform: scale(1.01);
+	-webkit-transform: scale(1.01);
+	filter: blur(0.3vw);
+	-webkit-filter: blur(0.3vw);
+	opacity: 0;
+}
+
+.dormant:hover ~ .active {
+	opacity: 1;
+}
+
+#preview-img {
+	display: none;
+}
+
+#footer {
+	position: relative;
+	float: left;
+	width: 100%;
+	font-size: 12px;
+	padding-bottom: 5%;
+}
+
+.footer-link {
+	font-family: Calibri, sans serif;
+	letter-spacing: 0.1em;
+	text-decoration: none;
+	color: cyan;
+}
+
+#chart {
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 50%;
+	margin-top: 8%;
+	border: 1px solid white;
+}
