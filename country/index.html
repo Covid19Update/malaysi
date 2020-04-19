@@ -18,12 +18,10 @@
 		<!-- JS Charting script -->
 
 		<script src="https://code.jscharting.com/2.9.0/jscharting.js"></script>
-		
-		<!-- Drop-down list input of available regions -->
 
 		<script type="text/javascript">
 			function updateURL(val) {
-				window.location.href = "/world/country?in=" + val;
+				window.location.href = "/world/country/index.html?in=" + val;
 			}
 			
 			function select(elem) {
@@ -39,7 +37,6 @@
 			}
 		</script>
 
-<script src="https://covid19update.github.io/world/country/get-data.js"></script>
 <!-- Search by U.S. county -->
 <div id="input-container">
 	<input id="input" name="input" placeholder="Search by county (i.e. Los Angeles, California)" onkeypress="input(document.getElementById('input'))">
@@ -299,14 +296,33 @@
 	</select>
 </div>
 
+<script src="https://covid19update.github.io/world/country/get-data.js"></script>
 <!-- Get info on location/region -->
-<p id="data">
-	<span id="title">COVID-19 Tracker</span><br />
-
-	<span id="region">Loading...</span><br />
-	<span id="date">(n/a)</span><br /><br />
-	
-	<span id="confirmed-title">Cases:</span><br /><span id="confirmed">(n/a)</span><br />
-	<span id="deaths-title">Deaths:</span><br /><span id="deaths">(n/a)</span><br />
-	</p>
+<div id="data-container">
+			
+				<div id="data">
+				
+					<span id="title">COVID-19 TRACKER</span>
+				
+					<div id="region-date-container">
+						<span id="region">Loading...</span><br />
+						<span style="font-size:12px;">AS OF <span><span id="date">(n/a)</span>
+					</div>
+					
+					<div id="confirmed-container"><span id="confirmed-title">CASES</span><br /><span id="confirmed">(n/a)</span><br /></div>
+					<div id="deaths-container"><span id="deaths-title">DEATHS</span><br /><span id="deaths">(n/a)</span></div>
+				
+					<div id="logo-container">
+						<a href="https://www.randallarms.com">
+							<img src="images/favicon.png" class="logo dormant" />
+							<img src="images/favicon.png" class="logo active" />
+						</a>
+					</div>
+					
+					<div id="footer">
+						</div>
+					
+				</div>
+				
+			</div>
 </body></html>
