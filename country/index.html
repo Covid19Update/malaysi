@@ -1,3 +1,43 @@
+<html>
+<head>
+<title>COVID-19 World Uodate</title>
+		<base href="/" />
+		<link rel="icon" type="image/png" href="/images/favicon.png">
+		<link type="text/css" rel="stylesheet" href="projects/covid-19/stylesheet.css" />
+		
+		<meta charset="UTF-8">
+		<meta name="description" content="Simple statistics for the novel coronavirus (COVID-19) pandemic. Built by Randall Arms, Jr., using code & data from Johns Hopkins CSSE, the NY Times, and Rodrigo Pombo. Contains number of COVID-19 cases by state & county (in the US) as well as by country. Stay home and stay safe!">
+		<meta name="keywords" content="Randall Arms,coronavirus,covid-19,live,news,tracker,info,web,website,RACOM,online,pomber,Rodrigo Pombo,Johns Hopkins,CSSE,NY Times,data,graphs,charts,stats,statistics,numbers,count,location,state,country,county,US,United States,worldwide,global,total,updated,daily">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Background script -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+			
+		<!-- JS Charting script -->
+
+		<script src="https://code.jscharting.com/2.9.0/jscharting.js"></script>
+		
+		<!-- Drop-down list input of available regions -->
+
+		<script type="text/javascript">
+			function updateURL(val) {
+				window.location.href = "/covid-19?in=" + val;
+			}
+			
+			function select(elem) {
+				var val = elem.options[elem.selectedIndex].value;
+				updateURL(val);
+			}
+			
+			function input(elem) {
+				if (event.keyCode === 13){
+					var val = elem.value;
+					updateURL(val);
+				}
+			}
+		</script>
 <!-- JS Charting script -->
 
 <script src="https://code.jscharting.com/2.9.0/jscharting.js"></script>
@@ -295,3 +335,4 @@
 	<span id="confirmed-title">Cases:</span><br /><span id="confirmed">(n/a)</span><br />
 	<span id="deaths-title">Deaths:</span><br /><span id="deaths">(n/a)</span><br />
 </p>
+</body></html>
