@@ -172,7 +172,7 @@ body {
 
 #confirmed {
 	font-family: "Open 24 Display", Calibri, sans serif;
-	color: #ffeaab;
+	color: #ff0000;
 	font-size: 52px;
 }
 
@@ -195,7 +195,7 @@ body {
 
 #deaths {
 	font-family: "Open 24 Display", Calibri, sans serif;
-	color: #ffb3da;
+	color: #ffa600;
 	font-size: 52px;
 }
 
