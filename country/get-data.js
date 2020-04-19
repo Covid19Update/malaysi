@@ -94,9 +94,11 @@ $(document).ready(function(){
 			var total_date;
 			var total_confirmed = 0;
 			var total_deaths = 0;
+			var total_recovered = 0;
 			for (n = 0; n < Object.keys(data).length; n++) {
 				var subtotal_confirmed = 0;
 				var subtotal_deaths = 0;
+				var subtotal_recovered =0;
 				Object.values(data)[n].forEach(({ date, confirmed, recovered, deaths }) =>
 					{
 						total_date = date;
@@ -187,7 +189,6 @@ $(document).ready(function(){
 									new Date(date).toLocaleDateString("en-US", date_options), 
 									cases,
 									deaths,
-									recovered
 								);
 							}
 						
@@ -228,7 +229,7 @@ if (typeof(loc) === "undefined") {
 }
 
 // Put the data onto the page
-function fill_data(date, cases, deaths) {
+function fill_data(date, cases, deaths, recovered) {
 	document.getElementById("date").textContent = date.toUpperCase();
 	document.getElementById("confirmed").textContent = cases.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	document.getElementById("deaths").textContent = deaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -397,6 +398,7 @@ $(document).ready(function(){
 			for (n = 0; n < Object.keys(data).length; n++) {
 				var subtotal_confirmed = 0;
 				var subtotal_deaths = 0;
+				var subtotal_recovered =0;
 				Object.values(data)[n].forEach(({ date, confirmed, recovered, deaths }) =>
 					{
 						total_date = date;
