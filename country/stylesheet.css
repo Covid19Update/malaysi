@@ -103,6 +103,11 @@ body {
 	color: white;
 }
 
+html:not(.browser-android) select {
+    background: #0f0;
+    border: 1px solid #ff0;
+}
+
 #data-container {
 	text-align: center;
 	width: 100%;
